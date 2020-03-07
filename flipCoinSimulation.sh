@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 H=0
 T=1
 declare -A flipCoin
@@ -31,8 +31,8 @@ function flip(){
 				coin+=T
 			fi
 		done
-		count $coin
-		coin=""
+			count $coin
+			coin=""
 	done
 }
 
@@ -45,11 +45,19 @@ function flipCoinPercentage() {
 	do
 		flipCoin[$i]=`echo "scale=2; ${flipCoin[$i]}*100/$countOfFlip" | bc`
 	done
-	echo "Triplets key value is: ${!flipCoin[@]}"
-	echo "percentage: ${flipCoin[@]}"
+		echo "Key value is: ${!flipCoin[@]}"
+		echo "percentage: ${flipCoin[@]}"
 }
+
+function sortingPercentage() {
+	for i in ${!flipCoin[@]}
+	do
+		echo "$i ${flipCoin[$i]}"
+	done | sort -k2 -rn | head -1
+}
+
 echo ${!flipCoin[@]}
 echo ${flipCoin[@]}
 flip $countOfFlip $noOfCoin
 flipCoinPercentage
-
+sortingPercentage
