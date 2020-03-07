@@ -6,13 +6,13 @@ read -p "enter  how many times to flip coin" countOfFlip
 read -p "enter your choice 1] Singlet 2] Doublet 3] Triplet " choice
 case $choice in
 		1)
-			noOfCoin=1 
+			noOfCoin=1
 			;;
 		2)
-			noOfCoin=2 
+			noOfCoin=2
 			;;
 		3)
-			noOfCoin=3 
+			noOfCoin=3
 			;;
 		*)
 			echo "Invalid coice"
